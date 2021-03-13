@@ -59,5 +59,16 @@
 
   cards.forEach(card => card.addEventListener('click', flipCard));
 
+function trocaTema(){
+ 
+ document.getElementsByClassName("cartas")[0].src=deck.cartas[0]
+}
 
 
+
+
+const deck = {
+  "cartas":[
+    "./img/dc/Alerquina.jpg"
+  ]
+}
