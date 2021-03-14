@@ -95,7 +95,7 @@
 */
 function trocaTemaMarvel(){
 
-/* ------------------- Troca cartas - Jogo DC --------------------------*/
+/* ---------------- Troca cartas - Jogo DC ------------------------*/
 
     document.getElementsByClassName("cartas")[0].src=deckdc.cartas[0]
     document.getElementsByClassName("cartas")[1].src=deckdc.cartas[1]
