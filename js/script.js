@@ -1,6 +1,20 @@
 
   const cards = document.querySelectorAll('.memory-card');
 
+  var deckmarvel
+  fetch("../json/deckmarvel.json")
+  .then(response => response.json())
+  .then(data => { deckmarvel = data
+  })
+  .catch(error => console.error(error))
+
+  var deckdc
+  fetch("../json/deckdc.json")
+  .then(response => response.json())
+  .then(data => { deckdc = data
+  })
+  .catch(error => console.error(error))
+
   let hasFlippedCard = false;
   let lockBoard = false;
   let firstCard, secondCard;
@@ -18,7 +32,6 @@
     }
 
     secondCard = this;
-
     checkForMatch();
   }
 
@@ -59,112 +72,61 @@
 
   cards.forEach(card => card.addEventListener('click', flipCard));
 
+  function trocaTemaMarvel(){
+    document.getElementsByClassName("cartas")[0].src=deckdc.cartas[0]
+    document.getElementsByClassName("cartas")[1].src=deckdc.cartas[1]
+    document.getElementsByClassName("cartas")[2].src=deckdc.cartas[2]
+    document.getElementsByClassName("cartas")[3].src=deckdc.cartas[3]
+    document.getElementsByClassName("cartas")[4].src=deckdc.cartas[4]
+    document.getElementsByClassName("cartas")[5].src=deckdc.cartas[5]
+    document.getElementsByClassName("cartas")[6].src=deckdc.cartas[6]
+    document.getElementsByClassName("cartas")[7].src=deckdc.cartas[7]
+    document.getElementsByClassName("cartas")[8].src=deckdc.cartas[8]
+    document.getElementsByClassName("cartas")[9].src=deckdc.cartas[9]
+    document.getElementsByClassName("cartas")[10].src=deckdc.cartas[10]
+    document.getElementsByClassName("cartas")[11].src=deckdc.cartas[11]
 
-  function trocaTema2(){
-    document.getElementsByClassName("cartas")[0].src=deck.cartas[0]
-    document.getElementsByClassName("cartas")[1].src=deck.cartas[1]
-    document.getElementsByClassName("cartas")[2].src=deck.cartas[2]
-    document.getElementsByClassName("cartas")[3].src=deck.cartas[3]
-    document.getElementsByClassName("cartas")[4].src=deck.cartas[4]
-    document.getElementsByClassName("cartas")[5].src=deck.cartas[5]
-    document.getElementsByClassName("cartas")[6].src=deck.cartas[6]
-    document.getElementsByClassName("cartas")[7].src=deck.cartas[7]
-    document.getElementsByClassName("cartas")[8].src=deck.cartas[8]
-    document.getElementsByClassName("cartas")[9].src=deck.cartas[9]
-    document.getElementsByClassName("cartas")[10].src=deck.cartas[10]
-    document.getElementsByClassName("cartas")[11].src=deck.cartas[11]
-
-    document.getElementsByClassName("cartas2")[0].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[1].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[2].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[3].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[4].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[5].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[6].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[7].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[8].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[9].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[10].src=deck.cartas2[0]
-    document.getElementsByClassName("cartas2")[11].src=deck.cartas2[0]
-
+    document.getElementsByClassName("cartas2")[0].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[1].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[2].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[3].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[4].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[5].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[6].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[7].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[8].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[9].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[10].src=deckdc.cartas2[0]
+    document.getElementsByClassName("cartas2")[11].src=deckdc.cartas2[0]
   }
 
-  function trocaTema3(){
-    document.getElementsByClassName("cartas")[0].src=deck2.cartas[0]
-    document.getElementsByClassName("cartas")[1].src=deck2.cartas[1]
-    document.getElementsByClassName("cartas")[2].src=deck2.cartas[2]
-    document.getElementsByClassName("cartas")[3].src=deck2.cartas[3]
-    document.getElementsByClassName("cartas")[4].src=deck2.cartas[4]
-    document.getElementsByClassName("cartas")[5].src=deck2.cartas[5]
-    document.getElementsByClassName("cartas")[6].src=deck2.cartas[6]
-    document.getElementsByClassName("cartas")[7].src=deck2.cartas[7]
-    document.getElementsByClassName("cartas")[8].src=deck2.cartas[8]
-    document.getElementsByClassName("cartas")[9].src=deck2.cartas[9]
-    document.getElementsByClassName("cartas")[10].src=deck2.cartas[10]
-    document.getElementsByClassName("cartas")[11].src=deck2.cartas[11]
+  function trocaTemaDc(){
+    document.getElementsByClassName("cartas")[0].src=deckmarvel.cartas[0]
+    document.getElementsByClassName("cartas")[1].src=deckmarvel.cartas[1]
+    document.getElementsByClassName("cartas")[2].src=deckmarvel.cartas[2]
+    document.getElementsByClassName("cartas")[3].src=deckmarvel.cartas[3]
+    document.getElementsByClassName("cartas")[4].src=deckmarvel.cartas[4]
+    document.getElementsByClassName("cartas")[5].src=deckmarvel.cartas[5]
+    document.getElementsByClassName("cartas")[6].src=deckmarvel.cartas[6]
+    document.getElementsByClassName("cartas")[7].src=deckmarvel.cartas[7]
+    document.getElementsByClassName("cartas")[8].src=deckmarvel.cartas[8]
+    document.getElementsByClassName("cartas")[9].src=deckmarvel.cartas[9]
+    document.getElementsByClassName("cartas")[10].src=deckmarvel.cartas[10]
+    document.getElementsByClassName("cartas")[11].src=deckmarvel.cartas[11]
 
-    document.getElementsByClassName("cartas2")[0].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[1].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[2].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[3].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[4].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[5].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[6].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[7].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[8].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[9].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[10].src=deck2.cartas2[0]
-    document.getElementsByClassName("cartas2")[11].src=deck2.cartas2[0]
+    document.getElementsByClassName("cartas2")[0].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[1].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[2].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[3].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[4].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[5].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[6].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[7].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[8].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[9].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[10].src=deckmarvel.cartas2[0]
+    document.getElementsByClassName("cartas2")[11].src=deckmarvel.cartas2[0]
   }
 
-const deck = {
-  "cartas2" : ["./img/dc/dcComics.jpg"] ,
   
-  "cartas": [
-  
-  "./img/dc/Alerquina.jpg" ,
-  "./img/dc/Alerquina.jpg" ,
-
-  "./img/dc/Batman.jpg" ,
-  "./img/dc/Batman.jpg" ,
-
-  "./img/dc/SuperHomem.jpg" ,
-  "./img/dc/SuperHomem.jpg" ,
-
-  "./img/dc/SuperGirl.jpg" ,
-  "./img/dc/SuperGirl.jpg" ,
-
-  "./img/dc/Flash.jpg" ,
-  "./img/dc/Flash.jpg" ,
-
-  "./img/dc/MulherMaravilha.jpg" ,
-  "./img/dc/MulherMaravilha.jpg" 
-] ,
-}
-
-const deck2 = {
-"cartas2" : ["./img/marvel/logoMarvel.jpg"] ,
-
-"cartas": [
-"./img/marvel/CapitaoAmerica.jpg",
-"./img/marvel/CapitaoAmerica.jpg",
-
-"./img/marvel/HomemDeFerro.jpg",
-"./img/marvel/HomemDeFerro.jpg",
-
-"./img/marvel/Hulk.jpg" ,
-"./img/marvel/Hulk.jpg" ,
-
-"./img/marvel/Thor.jpg" ,
-"./img/marvel/Thor.jpg" , 
-
-"./img/marvel/HomemAranha.jpg" , 
-"./img/marvel/HomemAranha.jpg" , 
-
-"./img/marvel/DeadPool.jpg" , 
-"./img/marvel/DeadPool.jpg" 
- ]
-}
-
-
 

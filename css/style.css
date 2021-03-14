@@ -1,8 +1,6 @@
-
-#deck-themes {
-top: 10px;
-width: 200px;
-height: 50px;
+.seletor {
+  margin-top: 240px;
+  margin-left: 120px;
 }
 
 .Botao {
@@ -10,6 +8,45 @@ top: 10px;
 width: 200px;
 height: 50px;
 }
+
+.btn{
+  width: 300px;
+  top: 0px;
+  position: relative;
+  display: block;
+  color: rgb(12, 12, 12);
+  font-size: 14px;
+  font-family: "montserrat";
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid #759aff;
+  padding: 14px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+.btn::before{
+  background: #92baee;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.btn2:hover::before{
+  height: 100%;
+}
+
+.btn2::before{
+  width: 100%;
+  height: 0%;
+}
+
+
+
 
 *{
     padding: 0;
@@ -76,13 +113,17 @@ body {
   }
 
   .memory-game {
+    
     width: 640px;
     height: 640px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-  
-   perspective: 1000px;
+    perspective: 1000px;
+
+    margin-top: 20px;
+    padding-bottom: 15px;
+    
   }
 
   .memory-card {
