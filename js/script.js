@@ -2,18 +2,16 @@
   const cards = document.querySelectorAll('.memory-card'); 
 
   var deckmarvel // Criando uma variavel pra fazer uso dela dentro do vetor
-  fetch("../json/deckmarvel.json") // Caminho do nosso diretório de imagens 
+  fetch("./json/deckmarvel.json") // Caminho do nosso diretório de imagens 
   .then(response => response.json())
   .then(data => { deckmarvel = data
   })
-  .catch(error => console.error(error))
-
+  
   var deckdc
-  fetch("../json/deckdc.json") // Criando uma variavel pra fazer uso dela dentro do vetor
+  fetch("./json/deckdc.json") // Criando uma variavel pra fazer uso dela dentro do vetor
   .then(response => response.json()) // Caminho do nosso diretório de imagens 
   .then(data => { deckdc = data
   })
-  .catch(error => console.error(error))
 
   /* LET = Variavel local. só funciona dentro do do Bloco*/
   let hasFlippedCard = false; 
