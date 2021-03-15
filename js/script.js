@@ -32,6 +32,7 @@
 
     secondCard = this;
     checkForMatch();
+    pontos();
   }
 
   // Função para checagem de duas cartas (firstCard, secondCard) se retornar verdadeiro ou false
@@ -153,6 +154,17 @@ function trocaTemaDc(){
     document.getElementsByClassName("cartas2")[10].src=deckmarvel.cartas2[0]
     document.getElementsByClassName("cartas2")[11].src=deckmarvel.cartas2[0]
  
+  }
+  
+  var tentativas = 0;
+  var text = "Tentativas : ";
+
+  function pontos(){
+    if('flip'){
+      tentativas++;
+    }
+    let cont = document.getElementById("contador");
+    cont.innerHTML = text + tentativas;
   }
 
   
